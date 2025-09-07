@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Destroy Ship to Win</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row vertical-center-row">
+            <div class="col-md-12">
+
+
+                <div class="disconnected">
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-4 text-center">
+                            <div class="alert alert-danger">
+                                <p>Not Connected to Server.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- waiting room -->
+                <div id="waiting-room" style="display: none;">
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-4 text-center">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">Waiting Room</div>
+                                <div class="panel-body">
+                                    <p>You are connected to the server...</p>
+                                    <p>Waiting for another player...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game -->
+                <div id="game" style="display: block;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-primary"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
