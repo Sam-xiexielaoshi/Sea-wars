@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Socket.IO Connection Test</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h1>Socket.IO Connection Test</h1>
+    <div id="status">Connecting...</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script>
+      const socket = io();
+      const status = document.getElementById("status");
+
+      socket.on("connect", function () {
+        status.innerHTML = "✅ Connected to server!";
+        status.style.color = "green";
+        console.log("Connected with socket ID:", socket.id);
+      });
+
+      socket.on("disconnect", function () {
+        status.innerHTML = "❌ Disconnected from server";
+        status.style.color = "red";
+        console.log("Disconnected");
+      });
+
+      socket.on("connect_error", function (error) {
+        status.innerHTML = "❌ Connection failed: " + error.message;
+        status.style.color = "red";
+        console.log("Connection error:", error);
+      });
+    </script>
+  </body>
+</html>

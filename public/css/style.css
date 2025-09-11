@@ -1,15 +1,16 @@
-/* Disable bootstap 1200px */
-
-@media (min-wodth: 1200px) {
+/* Disable bootstrap 1200px */
+@media (min-width: 1200px) {
   .container {
     width: 970px;
   }
 }
 
 html,
-body.container {
+body,
+.container {
   height: 100%;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -17,17 +18,32 @@ body.container {
   vertical-align: middle;
 }
 
-.vertical-center-nav {
+.vertical-center-row {
   display: table-cell;
   vertical-align: middle;
 }
 
 h3 {
   margin-top: 5px;
+  color: #2c3e50;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.panel .panel-body {
-  padding-bottom: 0px;
+.panel,
+.panel-heading {
+  border-radius: 8px;
+  border-color: #34495e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.panel-body {
+  padding-bottom: 20px;
   margin-bottom: 0px;
 }
 
@@ -35,76 +51,236 @@ h3 {
 .btn-primary,
 .btn-primary:active,
 .btn-primary:focus {
-  border-radius: 0px;
-  background-color: #333;
-  border-color: #333;
+  border-radius: 6px;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  border-color: #2980b9;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #000;
-  border-color: #333;
+  background: linear-gradient(45deg, #2980b9, #1f5582);
+  border-color: #1f5582;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#message-list {
-  height: 95px;
+#messages-list {
+  height: 120px;
   overflow-y: scroll;
   margin-top: 5px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 10px;
 }
 
-#message {
+#messages {
   list-style: none;
   margin: 0px;
   padding: 0px;
 }
 
-#message li {
+#messages li {
   margin: 0px;
-  padding: 0px;
+  padding: 5px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+#messages li:last-child {
+  border-bottom: none;
 }
 
 .list-group-item:first-child,
 .list-group-item:last-child,
 .form-control {
-  border-radius: 0px;
+  border-radius: 6px;
 }
 
 .list-group-item {
-  border-color: #ccc;
+  border-color: #dee2e6;
+  transition: background-color 0.2s ease;
 }
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
 .form-control:focus {
-  box-shadow: none;
-  border-color: #ccc;
+  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  border-color: #3490dc;
 }
+
 #turn-status {
-  padding: 10px 0px;
+  padding: 15px 10px;
   margin: 25px 0 0 0;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 #turn-status a {
   font-weight: bold;
   text-decoration: underline;
+  color: inherit;
 }
 
 .alert-your-turn {
-  color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
+  color: #0c5460;
+  background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+  border-color: #abdde5;
+  animation: pulse 2s infinite;
 }
 
 .alert-opponent-turn {
-  color: #767676;
-  background-color: #f0f0f0;
-  border-color: #e9e9e9;
+  color: #6c757d;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-color: #dee2e6;
 }
 
 .alert-winner {
-  color: #3c763d;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
+  color: #155724;
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  border-color: #c3e6cb;
+  animation: celebrate 1s ease-in-out;
 }
 
 .alert-loser {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
+  color: #721c24;
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  border-color: #f5c6cb;
+}
+
+/* Canvas styling */
+canvas {
+  border: 2px solid #34495e;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  cursor: crosshair;
+}
+
+canvas:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Player grid styling */
+.player-grid {
+  padding: 15px;
+}
+
+/* Game title styling */
+.panel-heading {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Message styling */
+#messages li {
+  margin: 0px;
+  padding: 5px 0;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 14px;
+}
+
+#messages li:last-child {
+  border-bottom: none;
+}
+
+/* Waiting room animation */
+.panel-body p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Chat input improvements */
+.input-group .form-control {
+  font-size: 14px;
+}
+
+.input-group .btn {
+  font-size: 14px;
+}
+
+/* Turn status improvements */
+#turn-status {
+  padding: 15px 10px;
+  margin: 25px 0 0 0;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Error state styling */
+.alert-danger {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes celebrate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .player-grid {
+    margin-bottom: 20px;
+  }
+
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
+
+/* Loading animation for waiting room */
+.panel-body p:last-child::after {
+  content: "...";
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 1);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 1), 0.5em 0 0 rgba(0, 0, 0, 1);
+  }
+  40% {
+    color: rgba(0, 0, 0, 0.4);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 1), 0.5em 0 0 rgba(0, 0, 0, 1);
+  }
+  60% {
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0.4), 0.5em 0 0 rgba(0, 0, 0, 1);
+  }
+  80%,
+  100% {
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0.4), 0.5em 0 0 rgba(0, 0, 0, 0.4);
+  }
 }
