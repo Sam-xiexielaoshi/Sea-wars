@@ -18,6 +18,9 @@
   ],
   "author": "Your Name",
   "license": "ISC",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "dependencies": {
     "express": "^5.1.0",
     "html-entities": "^1.4.0",
