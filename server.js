@@ -143,6 +143,7 @@ function joinWaitingPlayers() {
 
     users[players[0].id].player = 0;
     users[players[1].id].player = 1;
+    
     users[players[0].id].inGame = game;
     users[players[1].id].inGame = game;
 
